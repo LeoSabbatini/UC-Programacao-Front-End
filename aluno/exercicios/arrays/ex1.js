@@ -1,33 +1,16 @@
-function gerenciarFilaAtendimento(filaInicial, novaPessoa) {
-  if (!Array.isArray(filaInicial)) {
-    console.error("Erro: A fila deve ser um Array.");
-    return;
-  }
+const fila = ["Ana", "Carlos", "Beatriz"];
 
-  if (typeof novaPessoa !== "string" || novaPessoa.trim() === "") {
-    console.error("Erro: Digite um nome válido.");
-    return;
-  }
+fila.push("Daniel");
 
-  filaInicial.push(novaPessoa.trim());
-
-  console.log("===Fila Completa===");
-  for (let i = 0; i < filaInicial.length; i++) {
-    console.log(`${i + 1}º da fila: ${filaInicial[i]}`);
-  }
-
-  const pessoaAtendida = filaInicial.shift();
-  console.log(`\nAtendendo agora: ${pessoaAtendida}`);
-
-  console.log("\n===Fila Atualizada===");
-  for (let i = 0; i < filaInicial.length; i++) {
-    console.log(`${i + 1}º da fila: ${filaInicial[i]}`);
-  }
-
-  return filaInicial;
+console.log("--- Fila completa ---");
+for (let i = 0; i < fila.length; i++) {
+  console.log(fila[i]);
 }
 
-const pessoasIniciais = ["Ana", "Carlos", "Beatriz"];
-gerenciarFilaAtendimento(pessoasIniciais, "Daniel");
+const atendido = fila.shift();
+console.log("\nAtendido:", atendido);
 
-
+console.log("\n--- Fila atualizada ---");
+for (let i = 0; i < fila.length; i++) {
+  console.log(fila[i]);
+}

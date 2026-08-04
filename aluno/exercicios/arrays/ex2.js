@@ -1,27 +1,16 @@
-function filtrarApenasNumeros(lista) {
-  if (!Array.isArray(lista)) {
-    console.error("Erro: Tem que ser array.");
-    return [];
-  }
+function filtrarNumeros(array) {
+  if (!Array.isArray(array)) return [];
 
-  const numerosEncontrados = [];
+  const numeros = [];
 
-  for (const elemento of lista) {
-    const numeroConvertido = Number(elemento);
-
-    const naoBoolean = typeof elemento !== "boolean";
-    const naoVazioOuNull = elemento !== null && String(elemento).trim() !== "";
-
-    if (!isNaN(numeroConvertido) && naoBoolean && naoVazioOuNull) {
-      numerosEncontrados.push(numeroConvertido);
+  for (const item of array) {
+    const num = Number(item);
+    if (!isNaN(num) && typeof item !== 'boolean' && item !== null && String(item).trim() !== '')numeros.push(num);
     }
-  }
-
-  return numerosEncontrados;
+  return numeros;
 }
 
-const dadosMisturados = [10, "20", "texto", true, null, undefined, 3.14, "", " 42 ", NaN];
-const apenasNumeros = filtrarApenasNumeros(dadosMisturados);
+const dadosMisturados = [10, "20", "texto", true, null, 3.14, ""];
 
-console.log("Array original:", dadosMisturados);
-console.log("Apenas números filtrados:", apenasNumeros);
+console.log("Array original (com erros):", dadosMisturados);
+console.log("Array filtrado (apenas números):", filtrarNumeros(dadosMisturados));
