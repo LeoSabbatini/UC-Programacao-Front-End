@@ -1,16 +1,17 @@
-const fila = ["Ana", "Carlos", "Beatriz"];
+const fila = ["Leo", "Amigo", "Inimigo"];
+fila.push("Corinthians");
 
-fila.push("Daniel");
 
-console.log("--- Fila completa ---");
+console.log("Fila completa:");
 for (let i = 0; i < fila.length; i++) {
   console.log(fila[i]);
 }
 
-const atendido = fila.shift();
-console.log("\nAtendido:", atendido);
+const removido = fila.shift();
 
-console.log("\n--- Fila atualizada ---");
+console.log("\nNova fila:");
 for (let i = 0; i < fila.length; i++) {
   console.log(fila[i]);
 }
+
+console.log("\nRemovido: \n" + removido)

@@ -1,16 +1,20 @@
-function filtrarNumeros(array) {
-  if (!Array.isArray(array)) return [];
-
+function separarNumeros(arr) {
   const numeros = [];
+  const naoNumeros = [];
 
-  for (const item of array) {
-    const num = Number(item);
-    if (!isNaN(num) && typeof item !== 'boolean' && item !== null && String(item).trim() !== '')numeros.push(num);
+  for (const item of arr) {
+    if (typeof item === 'number' && !isNaN(item)) {
+      numeros.push(item);
+    } else {
+      naoNumeros.push(item);
     }
-  return numeros;
+  }
+
+  return { numeros, naoNumeros};
 }
 
-const dadosMisturados = [10, "20", "texto", true, null, 3.14, ""];
+const dados = [10, "texto", 5.5, true, NaN, 42, null];
+const resultado = separarNumeros(dados);
 
-console.log("Array original (com erros):", dadosMisturados);
-console.log("Array filtrado (apenas números):", filtrarNumeros(dadosMisturados));
+console.log("Números:", resultado.numeros);
+console.log("Filtrados:", resultado.naoNumeros);
