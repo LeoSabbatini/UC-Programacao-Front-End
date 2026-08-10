@@ -21,7 +21,7 @@ function produtoMaisCaro(produto1, produto2){
         console.log("Produto mais caro: ")
         console.log("Item: ",produto2.nome)
         console.log("Preco: ",produto2.preco)
-        console.log("Preco: ",produto2.preco)
+        console.log("Preco: ",produto2.categoria)
 
     }
 }
