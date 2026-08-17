@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Países</title>
+		<style>
+		body{
+			background-color:#2C2E39;
+		}
+		h1, h2, h3{
+			color: #D8125B;
+		}
+		
+		header{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-bottom: 1px solid #D8125B;
+		}
+		.pais {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+
+	
+			div{
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				display: flex;
+				padding-bottom: 50px;
+				border-bottom: 1px solid #D8125B;
+			
+			}
+		}
+		.h2main{
+			display: flex;
+			justify-content: center;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Atlas Geográfico</h1>
+	</header>
+
+	<main>
+		<div class="h2main"><h2>Lista de países</h2></div>
+		<section class="countries">
+			 <div class="pais" >
+
+			 </div>
+		</section>
+	</main>
+
+	<!-- <script src="countries-colors.js"></script> -->
+	 <!-- <script src="./countries.js"></script> -->
+	 <script src="./countries-api.js"></script>
+	<script src="lista-paises.js"></script>
+</body>
+</html>
