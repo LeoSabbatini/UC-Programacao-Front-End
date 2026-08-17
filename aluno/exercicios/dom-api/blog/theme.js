@@ -36,4 +36,5 @@
         p.insertBefore(emoji, p)
     })
  }
+ 
  function aviso(){}
